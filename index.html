@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPA Setda Provinsi NTT - Tempat Penitipan Anak & Daycare Resmi</title>
+    <link rel="icon" type="image/png" href="assets/ntt-min.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nttRed: '#C8102E',
+                        nttGold: '#FFB81C',
+                        nttBlue: '#005A9C',
+                        nttDark: '#1E293B',
+                        nttLight: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 90, 156, 0.9) 0%, rgba(200, 16, 46, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-nttLight text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/ntt-min.png" alt="Logo TPA Provinsi NTT" class="w-12 h-12 object-contain">
+                    <div>
+                        <span class="block text-lg font-bold text-slate-900 leading-tight">TPA SETDA NTT</span>
+                        <span class="block text-xs font-semibold text-nttRed tracking-wide">TEMPAT PENITIPAN ANAK (DAYCARE)</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#beranda" class="text-nttBlue hover:text-nttRed transition-colors">Beranda</a>
+                    <a href="#profil" class="text-slate-600 hover:text-nttBlue transition-colors">Profil</a>
+                    <a href="#layanan" class="text-slate-600 hover:text-nttBlue transition-colors">Layanan</a>
+                    <a href="#ai-features" class="text-nttRed font-semibold hover:text-nttBlue transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Asisten Parent
+                    </a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-nttBlue transition-colors">Fasilitas</a>
+                    <a href="#pendaftaran" class="text-slate-600 hover:text-nttBlue transition-colors">Pendaftaran</a>
+                    <a href="#kontak" class="text-slate-600 hover:text-nttBlue transition-colors">Kontak</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#pendaftaran" class="bg-nttRed hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all text-sm inline-flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Titip Anak Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-nttBlue focus:outline-none p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Beranda</a>
+            <a href="#profil" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Profil</a>
+            <a href="#layanan" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Layanan Daycare</a>
+            <a href="#ai-features" class="block text-nttRed font-semibold py-2 hover:text-nttBlue flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Fitur Pintar AI Orang Tua
+            </a>
+            <a href="#fasilitas" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Fasilitas</a>
+            <a href="#kegiatan" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Jadwal Harian</a>
+            <a href="#pendaftaran" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Pendaftaran</a>
+            <a href="#kontak" class="block text-slate-800 font-medium py-2 hover:text-nttBlue">Kontak</a>
+            <a href="#pendaftaran" class="block text-center bg-nttRed text-white font-semibold py-2.5 rounded-xl shadow mt-4">
+                Daftar Pendaftaran Online
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl">
+                <span class="inline-block bg-nttGold/20 text-nttGold border border-nttGold/30 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+                    Dinas Pemberdayaan, Perempuan, Perlindugan Anak, Pengendalian Penduduk dan Keluarga Berencana Provinsi Nusa Tenggara Timur
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+                    Tempat Penitipan Anak (Daycare) Aman, Nyaman, & Edukatif
+                </h1>
+                <p class="text-base md:text-lg text-slate-100 mb-8 leading-relaxed">
+                    Solusi pengasuhan terpercaya untuk membantu ASN dan masyarakat NTT. Dilengkapi **Fitur Pintar AI** untuk konsultasi tumbuh kembang, rekomendasi nutrisi pencegahan stunting, dan cerita anak.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#pendaftaran" class="bg-nttGold hover:bg-yellow-500 text-slate-900 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all text-sm sm:text-base">
+                        Formulir Pendaftaran Daycare
+                    </a>
+                    <a href="#ai-features" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/30 backdrop-blur-sm transition-all text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-robot"></i> Tanya AI Parenting
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Section -->
+    <section id="profil" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-nttRed uppercase tracking-widest mb-2">Tentang Layanan Kami</h2>
+                <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">TPA Setda Provinsi NTT</p>
+                <p class="mt-4 text-slate-600">Layanan Tempat Penitipan Anak (TPA) ramah anak berbasis pengasuhan positif di bawah naungan Dinas Pemberdayaan, Perempuan, Perlindugan Anak, Pengendalian Penduduk dan Keluarga Berencana Provinsi Nusa Tenggara Timur.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&q=80&w=800" alt="Anak-anak bermain di TPA" class="rounded-2xl shadow-xl w-full object-cover h-96">
+                    <div class="absolute -bottom-6 -right-6 bg-nttBlue text-white p-6 rounded-2xl shadow-lg hidden sm:block max-w-xs">
+                        <p class="text-2xl font-black">100%</p>
+                        <p class="text-xs text-slate-200 mt-1">Pengasuh Terlatih & Terverifikasi dengan Lingkungan Steril</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <i class="fa-solid fa-eye text-nttBlue text-xl"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Visi Utama</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mewujudkan Tempat Penitipan Anak unggulan di NTT yang menjamin keamanan, kesehatan, serta optimalisasi tumbuh kembang anak usia dini secara bahagia dan berkarakter.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <i class="fa-solid fa-bullseye text-nttRed text-xl"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Misi Pengasuhan</h3>
+                        </div>
+                        <ul class="text-slate-600 text-sm space-y-2 list-disc list-inside">
+                            <li>Memberikan layanan pengasuhan harian yang aman, bersih, dan inklusif.</li>
+                            <li>Menyediakan menu gizi seimbang serta pemantauan tumbuh kembang anak secara periodik.</li>
+                            <li>Memfasilitasi stimulasi sensorik, motorik, dan sosialisasi melalui permainan edukatif.</li>
+                            <li>Membantu orang tua berkarir dengan rasa tenang dan fokus.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-nttRed uppercase tracking-widest mb-2">Program & Layanan</h2>
+                <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Layanan Penitipan Anak Terpadu</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
+                    <div class="w-14 h-14 bg-red-100 text-nttRed rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Penitipan Penuh (Full Day Care)</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Penitipan harian penuh mengikuti jam kantor ASN. Sudah termasuk makan siang gizi seimbang, kudapan sehat, istirahat siang, dan pengasuhan intensif.
+                    </p>
+                    <span class="text-xs font-semibold text-nttBlue bg-blue-50 py-1.5 px-3 rounded-lg inline-block w-fit">07.30 - 16.30 WITA</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
+                    <div class="w-14 h-14 bg-blue-100 text-nttBlue rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Stimulasi & Edukasi Dini</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Program belajar melalui bermain yang disesuaikan dengan tahapan umur anak untuk mengasah sensorik, psikomotorik, dan kemandirian anak.
+                    </p>
+                    <span class="text-xs font-semibold text-nttBlue bg-blue-50 py-1.5 px-3 rounded-lg inline-block w-fit">Usia 3 Bulan - 5 Tahun</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
+                    <div class="w-14 h-14 bg-amber-100 text-nttGold rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pemantauan Tumbuh Kembang</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Pemeriksaan rutin tinggi/berat badan, kesehatan gigi, dan catatan harian aktivitas anak yang dilaporkan secara terbuka kepada orang tua.
+                    </p>
+                    <span class="text-xs font-semibold text-nttBlue bg-blue-50 py-1.5 px-3 rounded-lg inline-block w-fit">Laporan Harian & Bulanan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur AI Pintar Section -->
+    <section id="ai-features" class="py-16 md:py-24 bg-gradient-to-b from-blue-900 to-nttDark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-nttGold/20 text-nttGold border border-nttGold/30 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-3">
+                    <i class="fa-solid fa-bolt mr-1"></i> Powered by Gemini AI
+                </span>
+                <h2 class="text-3xl font-extrabold sm:text-4xl text-white">Layanan AI Asisten Parenting TPA NTT</h2>
+                <p class="mt-4 text-slate-300 text-sm md:text-base">
+                    Gunakan kecerdasan buatan Gemini AI untuk berkonsultasi seputar jadwal anak, membuat rekomendasi gizi pencegahan stunting lokal NTT, dan membuat cerita edukatif secara gratis.
+                </p>
+            </div>
+
+            <!-- AI Interactive Tabs -->
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-8 border border-white/15 shadow-2xl">
+                <!-- Navigation Buttons -->
+                <div class="flex flex-wrap gap-2 justify-center border-b border-white/20 pb-6 mb-6">
+                    <button onclick="switchAiTab('chat')" id="tab-btn-chat" class="ai-tab-btn active bg-nttRed text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-comments"></i> Tanya AI Parenting TPA
+                    </button>
+                    <button onclick="switchAiTab('nutrition')" id="tab-btn-nutrition" class="ai-tab-btn bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-utensils"></i> Generator Gizi & Menu NTT
+                    </button>
+                    <button onclick="switchAiTab('story')" id="tab-btn-story" class="ai-tab-btn bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generator Cerita & Permainan
+                    </button>
+                </div>
+
+                <!-- Tab 1: AI Parenting Chatbot -->
+                <div id="ai-tab-chat" class="ai-tab-content block">
+                    <div class="max-w-3xl mx-auto bg-slate-900/80 rounded-2xl border border-slate-700/60 overflow-hidden flex flex-col h-[480px]">
+                        <!-- Chat Header -->
+                        <div class="bg-slate-800 p-4 flex items-center justify-between border-b border-slate-700">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-nttBlue rounded-full flex items-center justify-center text-white">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">Asisten AI TPA NTT</h4>
+                                    <p class="text-xs text-emerald-400 flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Siap Menjawab 24/7
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full">Gemini 3 Flash</span>
+                        </div>
+
+                        <!-- Chat Area -->
+                        <div id="chat-messages" class="p-4 flex-grow overflow-y-auto space-y-4 text-sm text-slate-200">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-nttBlue rounded-full flex items-center justify-center shrink-0 text-xs">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div class="bg-slate-800 p-3.5 rounded-2xl rounded-tl-none border border-slate-700 max-w-[85%] text-slate-200 leading-relaxed">
+                                    Halo Bapa/Mama! 👋 Saya Asisten AI TPA Setda Provinsi NTT. Ada yang bisa saya bantu mengenai info daycare, persiapan penitipan anak, gizi anak, atau konsultasi parenting?
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input -->
+                        <form onsubmit="handleAiChat(event)" class="p-3 bg-slate-800/80 border-t border-slate-700 flex gap-2">
+                            <input type="text" id="chat-input" placeholder="Tanyakan seputar jam buka, pendaftaran, gizi anak..." required class="flex-grow bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-nttBlue">
+                            <button type="submit" id="chat-submit-btn" class="bg-nttRed hover:bg-red-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-1 shrink-0 transition-colors">
+                                <span>Kirim</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Nutrition & Stunting Generator -->
+                <div id="ai-tab-nutrition" class="ai-tab-content hidden">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Usia Anak</label>
+                                <select id="nutri-age" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-nttBlue">
+                                    <option value="6-12 bulan">6 - 12 Bulan (Bayi/MPASI)</option>
+                                    <option value="1-2 tahun">1 - 2 Tahun (Batita)</option>
+                                    <option value="3-5 tahun">3 - 5 Tahun (Balita)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Fokus Kesehatan</label>
+                                <select id="nutri-focus" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-nttBlue">
+                                    <option value="Pencegahan Stunting & Beban Gizi">Pencegahan Stunting (Pangan NTT)</option>
+                                    <option value="Peningkatan Berat Badan">Peningkatan Berat Badan Sehat</option>
+                                    <option value="Variasi Menu Bekal Daycare">Variasi Bekal Daycare Sehat</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Alergi / Catatan</label>
+                                <input type="text" id="nutri-notes" placeholder="Misal: Alergi telur / Tanpa udang" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-nttBlue">
+                            </div>
+                        </div>
+
+                        <button onclick="generateNutritionPlan()" id="nutri-btn" class="w-full bg-nttGold hover:bg-yellow-500 text-slate-900 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Buat Rekomendasi Menu AI
+                        </button>
+
+                        <div id="nutri-output" class="mt-6 hidden bg-slate-900 p-6 rounded-2xl border border-slate-700 text-sm leading-relaxed text-slate-200">
+                            <!-- Output rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Story & Activity Generator -->
+                <div id="ai-tab-story" class="ai-tab-content hidden">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Topik Cerita / Aktivitas</label>
+                                <input type="text" id="story-topic" placeholder="Misal: Persahabatan Komodo dan Kancil / Belajar Membuang Sampah" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-nttBlue">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Pesan Moral / Karakter</label>
+                                <select id="story-moral" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-nttBlue">
+                                    <option value="Kejujuran dan Kasih Sayang">Kejujuran & Kasih Sayang</option>
+                                    <option value="Kemandirian dan Disiplin">Kemandirian & Disiplin</option>
+                                    <option value="Menjaga Kebersihan dan Lingkungan NTT">Cinta Lingkungan & Alam NTT</option>
+                                    <option value="Berbagi dan Saling Menolong">Saling Berbagi & Gotong Royong</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button onclick="generateStory()" id="story-btn" class="w-full bg-nttBlue hover:bg-blue-600 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-book-open"></i> Buatkan Dongeng Edukatif AI
+                        </button>
+
+                        <div id="story-output" class="mt-6 hidden bg-slate-900 p-6 rounded-2xl border border-slate-700 text-sm leading-relaxed text-slate-200 space-y-3">
+                            <!-- Story output here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section id="fasilitas" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-nttRed uppercase tracking-widest mb-2">Fasilitas Penunjang</h2>
+                <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Kenyamanan & Keamanan Anak Utama</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-video text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">CCTV & Pengawasan 24/7</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-snowflake text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Ruangan Ber-AC & Steril</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-icons text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Mainan Edukatif SNI</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-bed text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Ruang Tidur Nyaman</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-utensils text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Dapur & Katering Gizi</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-shower text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Kamar Mandi Anak</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-book-open-reader text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Pojok Baca Cilik</h4>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl text-center border border-slate-100 hover:border-nttBlue transition-colors">
+                    <i class="fa-solid fa-kit-medical text-3xl text-nttBlue mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Ruang P3K & Layanan Medis</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal Kegiatan Harian -->
+    <section id="kegiatan" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-nttRed uppercase tracking-widest mb-2">Aktivitas Sehari-Hari</h2>
+                <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Rangkaian Kegiatan Anak</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-nttBlue">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-bold text-nttBlue text-base sm:text-lg">07.30 - 08.30</span>
+                        <span class="text-slate-800 font-semibold text-sm sm:text-base">Penyambutan, Cek Mandiri & Bermain Bebas</span>
+                    </div>
+                    <i class="fa-solid fa-sun text-amber-500 text-xl hidden sm:block"></i>
+                </div>
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-nttGold">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-bold text-nttBlue text-base sm:text-lg">08.30 - 10.00</span>
+                        <span class="text-slate-800 font-semibold text-sm sm:text-base">Makan Pagi, Senam Ceria & Kegiatan Sensorik</span>
+                    </div>
+                    <i class="fa-solid fa-apple-whole text-red-500 text-xl hidden sm:block"></i>
+                </div>
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-nttRed">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-bold text-nttBlue text-base sm:text-lg">10.00 - 11.30</span>
+                        <span class="text-slate-800 font-semibold text-sm sm:text-base">Pembelajaran Terarah & Dongeng Karakter</span>
+                    </div>
+                    <i class="fa-solid fa-book text-emerald-500 text-xl hidden sm:block"></i>
+                </div>
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-nttBlue">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-bold text-nttBlue text-base sm:text-lg">11.30 - 14.30</span>
+                        <span class="text-slate-800 font-semibold text-sm sm:text-base">Makan Siang Bernutrisi, Sanitasi & Istirahat Siang</span>
+                    </div>
+                    <i class="fa-solid fa-moon text-indigo-500 text-xl hidden sm:block"></i>
+                </div>
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-nttGold">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-bold text-nttBlue text-base sm:text-lg">14.30 - 16.30</span>
+                        <span class="text-slate-800 font-semibold text-sm sm:text-base">Mandi Sore, Kudapan & Penjemputan Orang Tua</span>
+                    </div>
+                    <i class="fa-solid fa-house-user text-nttBlue text-xl hidden sm:block"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendaftaran Form Section -->
+    <section id="pendaftaran" class="py-16 md:py-24 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-lg p-8 sm:p-12 border border-slate-200">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Formulir Pendaftaran Online TPA</h2>
+                    <p class="text-slate-600 text-sm mt-2">Lengkapi data di bawah ini untuk pendaftaran penitipan anak di TPA Setda Provinsi NTT.</p>
+                </div>
+
+                <!-- Alert Message -->
+                <div id="alert-box" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                <form id="registration-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <!-- Data Anak -->
+                    <div class="border-b border-slate-200 pb-6">
+                        <h3 class="text-lg font-bold text-nttBlue mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-child"></i> Data Anak
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nama Lengkap Anak</label>
+                                <input type="text" placeholder="Masukkan nama anak" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Tanggal Lahir Anak</label>
+                                <input type="date" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Jenis Kelamin</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="L">Laki-laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Paket Penitipan</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                                    <option value="">-- Pilih Paket --</option>
+                                    <option value="full_day">Full Day Care (Senin - Jumat)</option>
+                                    <option value="half_day">Half Day Care (Pagi / Siang)</option>
+                                    <option value="insidental">Penitipan Insidental (Harian)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Orang Tua -->
+                    <div>
+                        <h3 class="text-lg font-bold text-nttBlue mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-user-group"></i> Data Orang Tua / Wali
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nama Ayah / Ibu / Wali</label>
+                                <input type="text" placeholder="Nama orang tua" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Status Kepegawaian Orang Tua</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                                    <option value="asn_setda">ASN / PTT Sekretariat Daerah NTT</option>
+                                    <option value="asn_opd">ASN / PTT Dinas / Badan OPD NTT</option>
+                                    <option value="umum">Masyarakat Umum / Swasta</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nomor HP / WhatsApp Active</label>
+                                <input type="tel" placeholder="08123456789" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Instansi / Alamat Domisili</label>
+                                <input type="text" placeholder="Nama instansi / alamat" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-nttBlue text-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-nttRed hover:bg-red-700 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm sm:text-base">
+                        Kirim Form Pendaftaran Anak
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-red-100 text-nttRed rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-location-dot text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Alamat Lokasi</h4>
+                        <p class="text-slate-600 text-sm mt-1">Kompleks Kantor Gubernur NTT / Setda Prov. NTT, Jl. El Tari No. 52, Kupang, Nusa Tenggara Timur.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-blue-100 text-nttBlue rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-clock text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Jam Operasional TPA</h4>
+                        <p class="text-slate-600 text-sm mt-1">Senin - Jumat: 07.30 - 16.30 WITA<br>Sabtu & Minggu: Libur</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-amber-100 text-nttGold rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Kontak Pengelola</h4>
+                        <p class="text-slate-600 text-sm mt-1">Dinas Pemberdayaan Perempuan, Perlindungan Anak, Pengendalian Penduduk dan Keluarga Berencana Provinsi NTT<br>Telp/WA: (0380) 123456 / 0812-3456-7890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nttDark text-white py-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-400">
+            <p>&copy; 2026 Dinas Pemberdayaan, Perempuan, Perlindugan Anak, Pengendalian Penduduk dan Keluarga Berencana Provinsi Nusa Tenggara Timur. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('alert-box');
+            
+            alertBox.className = 'mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-200';
+            alertBox.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Pendaftaran TPA berhasil dikirim! Pengelola TPA DP3AP2KB Prov. NTT akan menghubungi nomor WhatsApp Anda.';
+            alertBox.classList.remove('hidden');
+
+            document.getElementById('registration-form').reset();
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ================= GEMINI API INTEGRATION =================
+        const API_KEY = ""; // Managed runtime API key
+        const MODEL_NAME = "gemini-3-flash-preview";
+
+        // Tab Switching Logic
+        function switchAiTab(tabName) {
+            document.querySelectorAll('.ai-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-nttRed', 'active');
+                btn.classList.add('bg-white/10');
+            });
+            document.querySelectorAll('.ai-tab-content').forEach(content => content.classList.add('hidden'));
+
+            document.getElementById(`tab-btn-${tabName}`).classList.add('bg-nttRed', 'active');
+            document.getElementById(`tab-btn-${tabName}`).classList.remove('bg-white/10');
+            document.getElementById(`ai-tab-${tabName}`).classList.remove('hidden');
+        }
+
+        // API Call with Exponential Backoff
+        async function fetchGeminiAPI(payload, retries = 3, delay = 1000) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return await response.json();
+                } catch (err) {
+                    if (i === retries - 1) throw err;
+                    await new Promise(res => setTimeout(res, delay * Math.pow(2, i)));
+                }
+            }
+        }
+
+        // 1. AI Parenting Chatbot
+        const chatHistory = [
+            {
+                role: "user",
+                parts: [{ text: "Halo, bertindaklah sebagai Asisten AI Resmi TPA Setda Provinsi NTT (Tempat Penitipan Anak). Jawablah dengan ramah, informatif, dan membantu orang tua (ASN & Umum) di NTT mengenai jadwal (07.30 - 16.30 WITA), pendaftaran, gizi, penanganan stunting, serta aktivitas anak." }]
+            },
+            {
+                role: "model",
+                parts: [{ text: "Halo Bapa dan Mama! Saya Asisten AI TPA Setda Provinsi NTT. Siap memberikan informasi seputar daycare, pola asuh anak, menu gizi lokal NTT, dan panduan tumbuh kembang anak secara ramah dan profesional." }]
+            }
+        ];
+
+        async function handleAiChat(event) {
+            event.preventDefault();
+            const inputEl = document.getElementById('chat-input');
+            const messagesContainer = document.getElementById('chat-messages');
+            const submitBtn = document.getElementById('chat-submit-btn');
+            const userText = inputEl.value.trim();
+
+            if (!userText) return;
+
+            // Render User Message
+            messagesContainer.innerHTML += `
+                <div class="flex items-start gap-3 justify-end">
+                    <div class="bg-nttBlue text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] leading-relaxed shadow-sm">
+                        ${escapeHtml(userText)}
+                    </div>
+                </div>
+            `;
+            inputEl.value = '';
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i>`;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Loading indicator for Bot
+            const loadingId = 'loading-' + Date.now();
+            messagesContainer.innerHTML += `
+                <div id="${loadingId}" class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-nttBlue rounded-full flex items-center justify-center shrink-0 text-xs text-white">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-800 p-3.5 rounded-2xl rounded-tl-none border border-slate-700 text-slate-400 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-notch animate-spin"></i> Mengetik jawaban...
+                    </div>
+                </div>
+            `;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            chatHistory.push({ role: "user", parts: [{ text: userText }] });
+
+            try {
+                const payload = {
+                    contents: chatHistory,
+                    systemInstruction: {
+                        parts: [{ text: "Anda adalah Asisten AI Tempat Penitipan Anak (Daycare) Sekretariat Daerah Provinsi NTT di Kupang. Gunakan bahasa Indonesia yang santun, ramah, dan diselingi istilah hangat khas NTT seperti 'Bapa', 'Mama', 'Kaka'." }]
+                    }
+                };
+
+                const data = await fetchGeminiAPI(payload);
+                const botReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Mohon maaf Bapa/Mama, terjadi gangguan koneksi. Silakan coba lagi.";
+                
+                chatHistory.push({ role: "model", parts: [{ text: botReply }] });
+
+                document.getElementById(loadingId).remove();
+                messagesContainer.innerHTML += `
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-nttBlue rounded-full flex items-center justify-center shrink-0 text-xs text-white">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl rounded-tl-none border border-slate-700 max-w-[85%] text-slate-200 leading-relaxed space-y-2">
+                            ${formatMarkdown(botReply)}
+                        </div>
+                    </div>
+                `;
+            } catch (err) {
+                document.getElementById(loadingId).remove();
+                messagesContainer.innerHTML += `
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-nttRed rounded-full flex items-center justify-center shrink-0 text-xs text-white">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="bg-red-950/80 border border-red-800 text-red-200 p-3.5 rounded-2xl rounded-tl-none max-w-[85%]">
+                            Gagal terhubung dengan sistem AI. Mohon pastikan koneksi internet stabil.
+                        </div>
+                    </div>
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Kirim</span> <i class="fa-solid fa-paper-plane text-xs"></i>`;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        // 2. Nutrition Plan Generator (Structured Response)
+        async function generateNutritionPlan() {
+            const age = document.getElementById('nutri-age').value;
+            const focus = document.getElementById('nutri-focus').value;
+            const notes = document.getElementById('nutri-notes').value;
+            const btn = document.getElementById('nutri-btn');
+            const outputEl = document.getElementById('nutri-output');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Menyusun Rekomendasi Gizi...`;
+            outputEl.classList.remove('hidden');
+            outputEl.innerHTML = `<div class="flex items-center justify-center py-8 gap-3 text-nttGold"><i class="fa-solid fa-spinner animate-spin text-2xl"></i> <span>Sedang memproses menu pangan lokal NTT seimbang...</span></div>`;
+
+            const prompt = `Buatkan rekomendasi menu harian dan saran nutrisi seimbang untuk anak usia ${age} dengan fokus "${focus}". ${notes ? 'Catatan tambahan: ' + notes : ''}. Rekomendasikan bahan pangan lokal kaya gizi dari Nusa Tenggara Timur (seperti daun kelor/marungga, ikan segar, jagung, ubi, tempe/tahu).`;
+
+            try {
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    systemInstruction: {
+                        parts: [{ text: "Anda adalah Ahli Gizi Anak TPA Setda Prov. NTT. Berikan rekomendasi konkret berbentuk jadwal makan (Pagi, Selingan, Siang, Sore) dan tips pencegahan stunting." }]
+                    }
+                };
+
+                const data = await fetchGeminiAPI(payload);
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (text) {
+                    outputEl.innerHTML = `
+                        <div class="border-b border-slate-700 pb-3 mb-4 flex justify-between items-center">
+                            <h4 class="text-base font-bold text-nttGold flex items-center gap-2">
+                                <i class="fa-solid fa-bowl-food"></i> Rekomendasi Menu Gizi (${age})
+                            </h4>
+                            <span class="text-xs bg-emerald-900/60 text-emerald-300 px-3 py-1 rounded-full border border-emerald-700">Teruji Nutrisi</span>
+                        </div>
+                        <div class="space-y-3 text-slate-200">
+                            ${formatMarkdown(text)}
+                        </div>
+                    `;
+                } else {
+                    outputEl.innerHTML = `<p class="text-red-400">Gagal memuat rekomendasi nutrisi.</p>`;
+                }
+            } catch (err) {
+                outputEl.innerHTML = `<p class="text-red-400">Terjadi kesalahan teknis. Silakan coba kembali.</p>`;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> Buat Rekomendasi Menu AI`;
+            }
+        }
+
+        // 3. Story Generator
+        async function generateStory() {
+            const topic = document.getElementById('story-topic').value || "Petualangan Anak di Kupang";
+            const moral = document.getElementById('story-moral').value;
+            const btn = document.getElementById('story-btn');
+            const outputEl = document.getElementById('story-output');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Menulis Dongeng...`;
+            outputEl.classList.remove('hidden');
+            outputEl.innerHTML = `<div class="flex items-center justify-center py-8 gap-3 text-nttBlue"><i class="fa-solid fa-spinner animate-spin text-2xl"></i> <span class="text-slate-300">Merangkai cerita edukatif anak NTT...</span></div>`;
+
+            const prompt = `Buatkan cerita dongeng singkat, menarik, dan ramah anak (200-300 kata) tentang "${topic}" dengan nilai moral "${moral}". Sisipkan latar daerah Nusa Tenggara Timur (seperti keindahan alam Kupang, komodo, atau kain tenun). Buatkan juga 1 ide permainan interaktif sederhana di rumah yang terkait cerita tersebut.`;
+
+            try {
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    systemInstruction: {
+                        parts: [{ text: "Anda adalah Pendidik Anak Usia Dini (PAUD) di TPA Setda NTT yang mahir mendongeng dan membuat aktivitas menyenangkan untuk balita." }]
+                    }
+                };
+
+                const data = await fetchGeminiAPI(payload);
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (text) {
+                    outputEl.innerHTML = `
+                        <div class="border-b border-slate-700 pb-3 mb-2 flex justify-between items-center">
+                            <h4 class="text-base font-bold text-nttBlue flex items-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Dongeng Edukatif Anak
+                            </h4>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-slate-200">
+                            ${formatMarkdown(text)}
+                        </div>
+                    `;
+                } else {
+                    outputEl.innerHTML = `<p class="text-red-400">Gagal membuat cerita.</p>`;
+                }
+            } catch (err) {
+                outputEl.innerHTML = `<p class="text-red-400">Terjadi gangguan koneksi internet.</p>`;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-book-open"></i> Buatkan Dongeng Edukatif AI`;
+            }
+        }
+
+        // Helper Utility Functions
+        function escapeHtml(text) {
+            return text.replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+            });
+        }
+
+        function formatMarkdown(text) {
+            let formatted = escapeHtml(text)
+                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\n\n/g, '</p><p class="mt-2">')
+                .replace(/\n/g, '<br>');
+            return `<p class="leading-relaxed">${formatted}</p>`;
+        }
+    </script>
+</body>
+</html>
